@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 import { NgxPermissionsGuard, NgxPermissionsService } from 'ngx-permissions';
 import { AuthGuard } from 'src/app/guards/auth.guard';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponent,
     loadChildren: () => import('./pages/landing/landing.module').then(m => m.LandingModule)
   },
@@ -29,6 +29,11 @@ const routes: Routes = [
     component: HomeComponent,
     loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfileModule)
   },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({

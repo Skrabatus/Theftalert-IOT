@@ -241,7 +241,7 @@ this.router.navigate(['/login'])
   delUser(id:any){
     this._sUser.deleteUserId(id)
     .pipe( finalize(()=>{
-      if(this.currentRoute==='/home/profile'){
+      if(this.currentRoute==='/profile'){
         localStorage.clear()
         location.reload()
       }else{
@@ -269,7 +269,7 @@ this.router.navigate(['/login'])
       this.editarC=false;
       this.changeC=false;
 
-      if(this.currentRoute==='/home/users'){
+      if(this.currentRoute==='/users'){
 
       this.getUsers()
       }

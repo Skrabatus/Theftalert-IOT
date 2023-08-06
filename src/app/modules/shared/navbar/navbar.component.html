@@ -1,41 +1,15 @@
-<nav class="navbar shadow-sm navbar-expand-md  px-3" >
-  <div class="container-fluid" >
-      <a class="navbar-brand" [routerLink]="['home']">
-          <img src="assets/icons/logo_san_jose.png" class="img" alt="iot" >
-      </a>
 
-      <div class="contPerfil">
-        <!-- <p>Hola</p> -->
-        <app-avatar class="mx-2"></app-avatar>
-          <button mat-icon-button
-                  aria-label="Example icon button with a menu icon"
-                  class="navbar-toggler"
-                  type="button"
-                  color="primary"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarNav"
-                  aria-controls="navbarNav"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation">
-                  <mat-icon>menu</mat-icon>
-      </button>
-      </div>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"   routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" aria-current="page" [routerLink]="['/home']" >Inicio</a>
-        </li>
-        <li class="nav-item" *ngxPermissionsOnly="['ADMIN']">
-          <a class="nav-link" data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" aria-current="page" [routerLink]="['/home/users']">Administrar usuarios</a>
-        </li>
-        <li class="nav-item" *ngxPermissionsOnly="['ADMIN']" >
-          <a class="nav-link" data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" aria-current="page" [routerLink]="['/home/record']">Registro</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
+  <mat-list class="navbar-nav">
+    <mat-list-item [routerLink]="['/home']" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+      <mat-icon matListItemIcon>home</mat-icon>
+      <div matListItemTitle>Inicio</div>
+    </mat-list-item>
+    <mat-list-item  [routerLink]="['/users']"  class="nav-item"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"  *ngxPermissionsOnly="['ADMIN']">
+      <mat-icon matListItemIcon>people</mat-icon>
+      <div matListItemTitle>Administrar usuarios</div>
+    </mat-list-item>
+    <mat-list-item  [routerLink]="['/record']" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngxPermissionsOnly="['ADMIN']" >
+      <mat-icon matListItemIcon>history</mat-icon>
+      <div matListItemTitle>Registro</div>
+    </mat-list-item>
+  </mat-list>
