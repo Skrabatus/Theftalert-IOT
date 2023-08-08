@@ -1,6 +1,6 @@
 @use "../../../../assets/styles/variables";
 *{
-  color:variables.color(text-white);
+  color:variables.color(blue-dark);
 }
 footer{
   // height: 600px;
@@ -19,7 +19,8 @@ footer{
   // background-color: variables.color(coffe-dark);
 }
 .footer-p{
-  background-color: variables.color(coffe-dark);
+  // background-color: variables.color(coffe-dark);
+  background-color: rgba(218, 218, 218, 0.896)
 }
 @media (min-width: 758px){
   footer{

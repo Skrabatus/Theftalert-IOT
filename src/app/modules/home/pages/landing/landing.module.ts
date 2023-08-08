@@ -6,12 +6,16 @@ import { ContentComponent } from './content/content.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SharedModule } from 'src/app/modules/shared/shared.module';
 import { NgxPermissionsModule } from 'ngx-permissions';
+import { FormScheduleComponent } from './components/form-schedule/form-schedule.component';
+import { TimeComponent } from './components/time/time.component';
 
 
 @NgModule({
   declarations: [
     ContentComponent,
-    HomeComponent
+    HomeComponent,
+    FormScheduleComponent,
+    TimeComponent
   ],
   imports: [
     CommonModule,

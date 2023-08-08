@@ -1,41 +1,33 @@
-<section class="container p-2">
-  <h1>Perfil</h1>
-  <hr>
-  <div class="row m-0">
-    <div class="col-12 col-sm-4 col-md-3 cont__img">
-      <div class="card border-0 shadow" style="width: 18rem;">
-        <img src="assets/icons/logo_san_jose.png" class="card-img-top" alt="logo IE San Juan">
-        <div class="card-body">
-          <p class="card-text text-center h5" style="font-weight: bolder;">
-            I E San Juan
-          </p>
-        </div>
+<section class="container-fluid p-1 p-lg-4 cont">
+  <h1 class="title">Perfil</h1>
+  <div class="cont__profile">
+    <div class="cont__profile__card cont__profile__card--1 shadow">
+      <div class="cont__profile__card__text">
+        <h3 class="text-center subtitle">Datos</h3>
+        <p class=""><strong>Nombre: </strong> {{_sctr.user?.name}}</p>
+        <p class=""><strong>Apellidos: </strong> {{_sctr.user?.lastname}}</p>
+        <p class=""><strong>Email: </strong> {{_sctr.user?.email}}</p>
+        <p class=""><strong>Password</strong> {{_sctr.user?.password}}</p>
+        <p class=""><strong>Rol: </strong> {{_sctr.user?.role}}</p>
+      </div>
+      <div class="cont__profile__card__btn">
+        <button mat-raised-button class="cont__profile__card__btn--1" (click)="_sctr.editar(_sctr.user)" data-bs-toggle="modal"
+        data-bs-target="#ModalUser"><mat-icon class="mat-18">edit</mat-icon>Editar</button>
+        <button mat-raised-button class="cont__profile__card__btn--2" (click)="eliminarcuenta()"><mat-icon class="mat-18">close</mat-icon>Eliminar</button>
       </div>
     </div>
-    <div class="col-11 col-sm-7 col-md-8 cont__perfil my-3">
-      <div class="row">
-        <div class="col-12  p-2"><p class="user__data"><strong class="color">Nombres:</strong> {{_sctr.user?.name}}</p></div>
-        <div class="col-12  p-2"><p class="user__data"><strong class="color">Apellidos:</strong> {{_sctr.user?.lastname}}</p></div>
+    <div class="cont__profile__card cont__profile__card--2 shadow">
+      <div class="img">
+        <img src="assets/icons/logo_san_jose.png" class="card-img-top" alt="">
       </div>
-      <div class="row">
-        <div class="col-12 "><p class="user__data"><strong class="color">Email:</strong> {{_sctr.user?.email}}</p></div>
-      </div>
-      <div class="row">
-        <div class=" col-12 p-2"><p class="user__data"><strong class="color">Contraseña:</strong> {{_sctr.user?.password}}</p></div>
-        <div class=" col-12 p-2"><p class="user__data"><strong class="color">Rol:</strong> {{_sctr.user?.role}}</p></div>
-      </div>
-      <div class="cont__btn ">
-        <button type="button"
-        data-bs-toggle="modal"
-        data-bs-target="#ModalUser"
-        class="btn btn-primary"
-        (click)="_sctr.editar(_sctr.user)"
-        >Editar</button>
-        <button type="button"
-        class="btn btn-danger"  (click)="eliminarcuenta()">Eliminar cuenta</button>
-      </div>
+      <h2>I E <small> San Jose</small></h2>
     </div>
-
   </div>
 </section>
+
 <app-form></app-form>
+
+<ng-template #load>
+  <app-loading></app-loading>
+</ng-template>
+

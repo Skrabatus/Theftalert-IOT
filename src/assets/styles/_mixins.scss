@@ -11,6 +11,11 @@
         @content;
     }
 }
+@mixin desktopx() {
+    @media screen and (min-width: variables.$screen-desktopx) {
+        @content;
+    }
+}
 
 @mixin button($color-bacground, $color-text) {
     background-color: variables.color($color-bacground);
