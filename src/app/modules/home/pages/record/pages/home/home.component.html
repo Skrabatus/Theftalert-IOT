@@ -1,6 +1,5 @@
-<section class="container p-2">
+<section class="container p-1 p-lg-4">
   <h1 class="title">Registro</h1>
-  <hr>
   <mat-accordion *ngIf="record.length>0; else loading" >
 
     <mat-expansion-panel *ngFor="let record of record" (opened)="panelOpenState = true"

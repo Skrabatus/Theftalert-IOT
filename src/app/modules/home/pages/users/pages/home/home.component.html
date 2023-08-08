@@ -1,15 +1,17 @@
-<section class="container p-2">
+<section class="container p-1 p-lg-4">
   <h1 class="title">Usuarios permitidos</h1>
-  <hr>
   <div *ngIf="_sctr.dataSource.data.length>0; else elsebolk">
     <div class="container cont-btn ">
       <button class="btn btn-primary" style="z-index: 0;"
       data-bs-toggle="modal"
               data-bs-target="#ModalUser"
           (click)="_sctr.agregar()"
-      mat-raised-button>Agregar un nuevo usuario</button>
+      mat-raised-button>
+    	<mat-icon>person_add</mat-icon>
+      Agregar usuario
+    </button>
     </div>
-    <div class="container  container__user">
+    <div class="container  container__user shadow">
       <mat-form-field class="col col-12">
         <mat-label >Filtrar</mat-label>
         <input  matInput (keyup)="applyFilter($event)" placeholder="Buscar ..." #input>

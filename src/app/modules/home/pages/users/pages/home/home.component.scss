@@ -2,15 +2,14 @@
 
 .container__user{
   background-color: variables.color(white);
+  border-radius: 20px;
+  overflow: hidden;
 }
 .cont-btn{
   display: flex;
   justify-content: end;
   padding: variables.$padding;
 }
-// h1{
-  // color: variables.color(yellow);
-// }
 table {
     width: 100%;
   }
@@ -21,15 +20,10 @@ table {
   }
 
   td, th {
-    // width: 10%!important;
     padding: 2px !important;
   }
-//   :host ::ng-deep .ng-container td{
-//      color: red;
-//      border: solid red;
-//    }
+
 .mat-cell {
-    // color: red;
     text-align: start;
 }
 .example-container {
@@ -38,28 +32,23 @@ table {
     overflow: auto;
   }
 th{
-  // background-color: $hed-color;
   color: variables.color(green);
-  // color: red;
   font-weight: 600;
-  // background-color: rgba(255, 255, 255, 0)!important;
 }
 .mat-paginator{
-  // color: #1DE9B6;
-  // background-color: $hed-color;
-  // background-color: rgba(255, 255, 255, 0);
 }
 .mat-table {
-  // background-color: rgba(255, 255, 255, 0);
 }
 :host ::ng-deep mat-checkbox label{
   margin: 0;
   height: 20px;
 }
+:host ::ng-deep .mat-elevation-z8{
+box-shadow: none!important;
+}
 :host ::ng-deep .matinput{
   background-color: red!important;
   }
-  // :host ::ng-deep
   :host ::ng-deep mat-label{
   color: variables.color(gray-1)!important;
   }

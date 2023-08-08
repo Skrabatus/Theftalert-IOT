@@ -1,10 +1,16 @@
 @use "../../../../../../../assets/styles/variables" as variables;
 @use "../../../../../../../assets/styles/mixins" as mixins;
-
+// cont__btn--1
 .cont__btn{
   display: flex;
   gap: 20px;
   padding: variables.$padding;
+  &--1{
+    color:(variables.color(green))!important;
+  }
+  &--2{
+    color:(variables.color(red))!important;
+  }
 }
 button.btn__delete{
   background-color: variables.color(white);

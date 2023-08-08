@@ -1,15 +1,15 @@
 
   <mat-list class="navbar-nav">
     <mat-list-item [routerLink]="['/home']" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-      <mat-icon matListItemIcon>home</mat-icon>
+      <mat-icon matListItemIcon class="icon--1">home</mat-icon>
       <div matListItemTitle>Inicio</div>
     </mat-list-item>
     <mat-list-item  [routerLink]="['/users']"  class="nav-item"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"  *ngxPermissionsOnly="['ADMIN']">
-      <mat-icon matListItemIcon>people</mat-icon>
+      <mat-icon matListItemIcon class="icon--2">people</mat-icon>
       <div matListItemTitle>Administrar usuarios</div>
     </mat-list-item>
     <mat-list-item  [routerLink]="['/record']" class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngxPermissionsOnly="['ADMIN']" >
-      <mat-icon matListItemIcon>history</mat-icon>
+      <mat-icon matListItemIcon class="icon--3">history</mat-icon>
       <div matListItemTitle>Registro</div>
     </mat-list-item>
   </mat-list>

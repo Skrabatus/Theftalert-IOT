@@ -1,5 +1,13 @@
 @use "../../../../assets/styles/variables";
 
+.icon{
+  &--1, &--2, &--3{
+    color: variables.color(sky-blue)!important;
+  }
+  &--1{}
+  &--2{}
+  &--3{}
+}
 
 :host ::ng-deep mat-list{
   padding: 8px!important;

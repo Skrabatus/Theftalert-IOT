@@ -10,12 +10,9 @@
             <i class="fa-solid fa-bell fa-shake"></i>
           </button>
           <button mat-fab class="cont__lading__card__btn cont__lading__card__btn--2" (click)="cambiarEstado()">
-            <mat-icon>{{activar? 'alarm_off': 'alarm_on'}}</mat-icon>
+            <mat-icon [ngStyle]="{'color': activar ? '#33FFCA ' : '#FFB533'}" >{{activar? 'alarm_off': 'alarm_on'}}</mat-icon>
           </button>
         </div>
-        <!-- <button mat-fab class="cont__lading__card__btn cont__lading__card__btn--3" > -->
-          <!-- <mat-icon>alarm_on</mat-icon> -->
-        <!-- </button> -->
       </div>
     </div>
     <div class="cont__lading__card cont__lading__card__2 shadow">
