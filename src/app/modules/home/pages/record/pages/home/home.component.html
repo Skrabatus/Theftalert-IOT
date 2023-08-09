@@ -1,6 +1,24 @@
 <section class="container p-1 p-lg-4">
   <h1 class="title">Registro</h1>
-  <mat-accordion *ngIf="record.length>0; else loading" >
+  <div class="filtro shadow" >
+    <h3 class="filtro__title">Filtro</h3>
+    <div class="filtro__cont">
+      <mat-form-field>
+        <mat-label>Seleccione la fecha</mat-label>
+        <input matInput [matDatepicker]="picker" #pickerr>
+        <mat-hint *ngIf="error">Dato incorrecto</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <button type="button" class="filtro__btn" mat-raised-button
+      (click)="buscar(pickerr.value)"
+      >
+        <mat-icon>search</mat-icon>
+        Buscar
+      </button>
+    </div>
+  </div>
+  <mat-accordion *ngIf="record.length>0 && mostrar; else loading" >
 
     <mat-expansion-panel *ngFor="let record of record" (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
@@ -22,8 +40,11 @@
     </mat-expansion-panel>
 
   </mat-accordion>
-  <ng-template #loading>
-    <app-loading></app-loading>
+  <div class="alert__reg" *ngIf="!mostrar">
+    No se encontrarón registros
+  </div>
+  <ng-template #loading >
+    <app-loading ></app-loading>
   </ng-template>
 
 
