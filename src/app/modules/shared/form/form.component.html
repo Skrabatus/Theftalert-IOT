@@ -4,7 +4,7 @@
     (ngSubmit)="_sctr.enviar()" class="modal-dialog ">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="ModalUserLabel">{{_sctr.nameform}} usuario</h1>
+          <h1 class="modal-title fs-5" id="ModalUserLabel">{{_sctr.nameform}} {{"FORM.title" | translate}}</h1>
           <button type="button" mat-icon-button class="btn" data-bs-dismiss="modal" aria-label="Close">  <mat-icon class="text-danger">close</mat-icon></button>
         </div>
         <div
@@ -16,45 +16,46 @@
 
           <div class="col d-flex flex-wrap flex-sm-nowrap col-12 justify-content-center " style="align-items: center;">
             <mat-form-field  appearance="fill" class="">
-              <mat-label>Ingrese el nombre</mat-label>
+              <mat-label>{{"FORM.input1" | translate}}</mat-label>
               <input
                     autocomplete="none-"
                     formControlName="name"
                     matInput type="text">
-              <mat-error *ngIf="_sctr.nameNoValid">Este campo es invalido</mat-error>
+              <mat-error *ngIf="_sctr.nameNoValid">{{"FORM.alert.alert1" | translate}}</mat-error>
             </mat-form-field>
             <mat-form-field  appearance="fill" class="">
-              <mat-label>Ingrese los apellidos</mat-label>
+              <mat-label>{{"FORM.input2" | translate}}</mat-label>
               <input
                     autocomplete="none-"
                     formControlName="lastname"
                      matInput type="text">
-              <mat-error *ngIf="_sctr.lastNameNoValid">Este campo es invalido</mat-error>
+              <mat-error *ngIf="_sctr.lastNameNoValid">{{"FORM.alert.alert1" | translate}}</mat-error>
             </mat-form-field>
           </div>
           <div class="col d-flex flex-wrap flex-sm-nowrap col-12 justify-content-center " style="align-items: center;">
             <mat-form-field  appearance="fill" class="">
-              <mat-label>Ingrese un correo</mat-label>
+              <mat-label>{{"FORM.input3" | translate}}</mat-label>
               <input
                     autocomplete="none-"
                     formControlName="email"
                      matInput type="email">
-              <mat-error *ngIf="_sctr.emailNoValid">Este campo es invalido</mat-error>
+              <mat-error *ngIf="_sctr.emailNoValid">{{"FORM.alert.alert1" | translate}}</mat-error>
             </mat-form-field>
             <!-- *ngIf="(_sctr.currentRoute==='/home/profile' && _sctr.user?.role==='ADMIN') || _sctr.currentRoute==='/home/users'" -->
               <mat-form-field  class="example-full-width"appearance="fill">
-                <mat-label>Seleccione un rol</mat-label>
+                <mat-label>{{"FORM.input4" | translate}}</mat-label>
                 <mat-select style="position: relative;" formControlName="role" name="catalog">
                   <mat-option  z-index="1056" *ngFor="let user of _sctr.rol" [value]="user?.role">
                     {{user?.role}}
                   </mat-option>
                 </mat-select>
+                <mat-error *ngIf="_sctr.roleNoValid">{{"FORM.alert.alert1" | translate}}</mat-error>
               </mat-form-field>
           </div>
           <div class="col d-flex flex-wrap  col-12 justify-content-center " style="flex-direction: column;align-items: center;position: relative!important;">
             <!-- *ngIf="_sctr.editarC" -->
             <mat-form-field  appearance="fill" class="">
-              <mat-label>Ingrese una contraseña</mat-label>
+              <mat-label>{{"FORM.input5" | translate}}</mat-label>
                 <input
                     autocomplete="none-"
                     formControlName="password"
@@ -63,7 +64,7 @@
                 <button type="button" mat-icon-button matSuffix (click)="_sctr.hide = !_sctr.hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="_sctr.hide">
                     <mat-icon>{{_sctr.hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
-                <mat-error *ngIf="_sctr.passwordNoValid"></mat-error>
+                <mat-error *ngIf="_sctr.passwordNoValid">{{"FORM.alert.alert1" | translate}}</mat-error>
             </mat-form-field>
             <!-- <button *ngIf="_sctr.nameform==='Editar'" (click)="_sctr.cambiarContrasena()" type="button" class=" d-flex btn btn-sm" style="margin: 0 auto;"  mat-raised-button color="primary">
               <span *ngIf="_sctr.changeC===false">Cambiar contraseña</span>
@@ -75,12 +76,14 @@
         <div class="modal-footer">
           <button type="button" mat-raised-button class="btn btn-secondary" data-bs-dismiss="modal">
             <mat-icon class="mat-18">close</mat-icon>
-            Cancelar
+            {{"FORM.button.btn1" | translate}}
           </button>
 
           <button  type="submit" [disabled]="_sctr.formu.invalid" class="btn btn-primary">
             <span *ngIf="_sctr.nameform==='Agregar'">{{_sctr.nameform}}</span>
-            <span *ngIf="_sctr.nameform==='Editar'">Guardar</span>
+            <span *ngIf="_sctr.nameform==='Editar'">
+              {{"FORM.button.btn2" | translate}}
+            </span>
           </button>
         </div>
       </div>

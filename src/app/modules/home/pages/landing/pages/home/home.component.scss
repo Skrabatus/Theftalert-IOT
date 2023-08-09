@@ -1,7 +1,31 @@
 @use "../../../../../../../assets/styles/variables" as variables;
 @use "../../../../../../../assets/styles/mixins" as mixins;
 
+.iot{
+  font-weight: 600;
+  color: variables.color(yellow);
+}
+.text{
+  user-select: none;
+  position: relative;
+  background: linear-gradient(-45deg, #ff6201, #d29edf, #0d974b,#0084ff, #54e252,#e25d52);
+  background-size: 300%;
+  font-weight: 600;
+  letter-spacing: -2px;
+  font-size: 30px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:  animated_text 6s ease-in-out infinite;
+  -moz-animation:  animated_text 6s ease-in-out infinite;
+  -webkit-animation:  animated_text 6s ease-in-out infinite
 
+}
+@keyframes animated_text{
+  0% { background-position: 0px 50%;}
+  50% { background-position: 100% 50%;}
+  100% { background-position: 0px 50%;}
+
+}
 .cont{
   &__lading{
     // border: solid 1px red;

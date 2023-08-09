@@ -1,6 +1,7 @@
 
 <section class="container-fluid p-1 p-lg-4 cont" >
-<h1 class="h1 title">Panel de control</h1>
+<h1 class="h1 title">{{"HOME.title" | translate}}</h1>
+<h2 class="h1 text text-center">{{"TITLE" | translate}}</h2>
   <div class="cont__lading" *ngIf="loading; else load">
     <div class="cont__lading__card mb-4 shadow" style="display: flex; flex-direction: column; gap: 10px;">
       <div class="  ">
@@ -20,7 +21,7 @@
         <mat-icon>edit</mat-icon>
       </button>
       <div class="cont__table">
-        <h3 class="text-center">Horas programadas</h3>
+        <h3 class="text-center">{{"HOME.form.title" | translate}}</h3>
         <app-table *ngIf="!editar; else edit" [schedule]="horari"></app-table>
         <ng-template #edit>
           <app-form-schedule [horari]="horari" (edit)="cancel($event)" (horariNew)="handleButtonClick($event)"></app-form-schedule>

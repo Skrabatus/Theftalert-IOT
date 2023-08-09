@@ -12,6 +12,7 @@ import { FormComponent } from './form/form.component';
 import { TableComponent } from './table/table.component';
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { AvatarComponent } from './avatar/avatar.component';
+import { TranslateModule } from '@ngx-translate/core';
 // import { ToastrModule } from 'ngx-toastr';
 
 
@@ -31,6 +32,7 @@ import { AvatarComponent } from './avatar/avatar.component';
     ReactiveFormsModule,
     NgxMaterialTimepickerModule,
     NgxPermissionsModule.forChild(),
+    TranslateModule,
   ],
   exports: [
     NavbarComponent,
@@ -42,6 +44,7 @@ import { AvatarComponent } from './avatar/avatar.component';
     MaterialModule,
     ReactiveFormsModule,
     NgxMaterialTimepickerModule,
+    TranslateModule,
 
   ]
 })

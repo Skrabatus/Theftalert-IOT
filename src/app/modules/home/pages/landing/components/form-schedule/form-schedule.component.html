@@ -1,11 +1,11 @@
 <div class="">
 <div class="cont__btn">
   <button mat-raised-button class="cont__btn--1" (click)="enviar()">
-    Guardar
+    {{"HOME.form.button.btn1" | translate}}
     <mat-icon>save</mat-icon>
   </button>
   <button mat-raised-button class="cont__btn--2" (click)="cancel()">
-    Cancelar
+    {{"HOME.form.button.btn2" | translate}}
     <mat-icon>close</mat-icon>
   </button>
 </div>
@@ -15,10 +15,10 @@ class="table-responsive">
 <table class="table table-bordered" >
 <thead class="table-dark">
 <tr>
-    <th >Hora</th>
-    <th >Tipo </th>
-    <th >Sonara </th>
-    <th >Opciones</th>
+    <th >{{"HOME.form.table.section1.title" | translate}}</th>
+    <th >{{"HOME.form.table.section2.title" | translate}}</th>
+    <th >{{"HOME.form.table.section3.title" | translate}}</th>
+    <th >{{"HOME.form.table.section4.title" | translate}}</th>
   </tr>
 </thead>
 <tbody formArrayName="horario">
@@ -33,7 +33,7 @@ class="table-responsive">
     </td>
     <td align="center" class="p-1">
       <mat-form-field  class="example-full-width" appearance="fill">
-        <mat-label>Seleccione un tipo</mat-label>
+        <mat-label>{{"HOME.form.table.section2.input" | translate}}</mat-label>
         <mat-select style="position: relative;" formControlName="tipo" name="tipo">
           <mat-option  z-index="1056" *ngFor="let timbre of tipo " [value]="timbre?.cod">
             {{timbre?.cod}}
@@ -43,7 +43,7 @@ class="table-responsive">
     </td>
     <td align="center">
       <mat-form-field class="example-form-field" appearance="fill">
-        <mat-label>¿Cuántas veces sonará?</mat-label>
+        <mat-label>{{"HOME.form.table.section3.input" | translate}}</mat-label>
         <mat-select style="position: relative;" formControlName="sonara" name="sonara">
           <mat-option  z-index="1056" *ngFor="let sonara of sonara " [value]="sonara?.cod">
             {{sonara?.cod}}
@@ -63,7 +63,7 @@ class="table-responsive">
     (click)="addHora()"
     type="button" mat-button class="btn mb-2"  style="background-color: rgb(0, 255, 238);"
     type="button" >
-    <i class="fa-solid fa-plus"></i> Agregar hora
+    <i class="fa-solid fa-plus"></i>{{"HOME.form.button.btn3" | translate}}
 </button>
 </div>
 </form>

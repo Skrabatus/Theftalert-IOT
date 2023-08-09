@@ -1,12 +1,12 @@
 <section class="container p-1 p-lg-4">
-  <h1 class="title">Registro</h1>
+  <h1 class="title">{{"RECORD.title" | translate}}</h1>
   <div class="filtro shadow" >
-    <h3 class="filtro__title">Filtro</h3>
+    <h3 class="filtro__title">{{"RECORD.FORM.title" | translate}}</h3>
     <div class="filtro__cont">
       <mat-form-field>
-        <mat-label>Seleccione la fecha</mat-label>
+        <mat-label>{{"RECORD.FORM.input1" | translate}}</mat-label>
         <input matInput [matDatepicker]="picker" #pickerr>
-        <mat-hint *ngIf="error">Dato incorrecto</mat-hint>
+        <mat-hint *ngIf="error">{{"RECORD.FORM.alert.alert1" | translate}}</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
@@ -14,7 +14,7 @@
       (click)="buscar(pickerr.value)"
       >
         <mat-icon>search</mat-icon>
-        Buscar
+        {{"RECORD.FORM.button.btn1" | translate}}
       </button>
     </div>
   </div>
@@ -34,14 +34,14 @@
         </mat-panel-description>
       </mat-expansion-panel-header>
       <div class="">
-        <h2 class="text-center">Horario</h2>
+        <h2 class="text-center">{{"RECORD.inf.title" | translate}}</h2>
       <app-table [schedule]="record['schedules']"></app-table>
       </div>
     </mat-expansion-panel>
 
   </mat-accordion>
   <div class="alert__reg" *ngIf="!mostrar">
-    No se encontrarón registros
+    {{"RECORD.inf.alert" | translate}}
   </div>
   <ng-template #loading >
     <app-loading ></app-loading>
