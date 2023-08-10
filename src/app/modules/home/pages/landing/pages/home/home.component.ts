@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { TimbreService } from 'src/app/services/timbre.service';
 import { Horario, Schedule } from '../../../../../../models/horario-response';
 import { finalize } from 'rxjs';
@@ -11,7 +11,7 @@ import { Record } from 'src/app/models/record-reponse';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy{
 
   public loading:boolean=false;
   public activar:boolean=true;
@@ -19,15 +19,22 @@ export class HomeComponent implements OnInit {
   public editar:boolean=false;
   public horari!:Schedule[];
   public record!:Record;
+  recognition: any;
+  isListening: boolean = false;
 
 
   constructor(private _sHorario:TimbreService,
     private _sCtr: ControllerService,
     ){
-      this.getHorario()
+     this.speak();
+  }
+  ngOnDestroy(): void {
+    this.stopRecognition();
   }
 
   ngOnInit(): void {
+
+    this.startRecognition();
   }
 
   tocarTimbre(){
@@ -78,7 +85,7 @@ Swal.fire({
     )
     .subscribe({
       next:(data)=>{
-        console.table(data)
+        // console.table(data)
       },
       error:()=>{
       }
@@ -96,5 +103,49 @@ Swal.fire({
   }
   handleButtonClick(value: Schedule[]) {
     this.horari=value;
+  }
+  startRecognition() {
+    this.recognition.start();
+  }
+
+  stopRecognition() {
+    this.recognition.stop();
+  }
+  speak(){
+    this.recognition = new (window as any).webkitSpeechRecognition();
+    this.getHorario();
+
+  this.recognition.continuous = true;
+  this.recognition.lang = 'es';
+  this.recognition.onstart = () => {
+    this.isListening = true;
+  };
+  this.recognition.onend = () => {
+    console.log('hola');
+    this.isListening = false;
+    if(!this.isListening){
+      this.startRecognition();
+    }
+  };
+  this.recognition.onresult = (event: any) => {
+    let results = event.results;
+    for (let i = event.resultIndex; i < results.length; i++) {
+      let transcript = results[i][0].transcript.toLowerCase();
+      console.log(transcript);
+
+      if (transcript.includes('tocar')) {
+        this.tocarTimbre();
+        delete event.results[i][0];
+        // console.log(results);
+        // results=[]
+      }else{
+        // delete results[i][0];
+
+      }
+      // console.log(results);
+    }
+
+  };
+
   }
 }
