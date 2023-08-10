@@ -81,7 +81,7 @@ export class FormScheduleComponent  implements OnInit {
       }
       this.putHorario(1, horario);
       setTimeout(() => {
-        // this.postInforme(this.record)
+        this.postInforme(this.record)
       }, 3000);
       this.toastr.success('Horario actualizado')
     }

@@ -61,8 +61,8 @@
     "table":{
       "title1":"Nombres",
       "title2":"Apellidos",
-      "title3":"Correo",
-      "title4":"Rol",
+      "title3":"Rol",
+      "title4":"Correo",
       "title5":"Contraseña",
       "title6":"Opciones"
     }
