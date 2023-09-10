@@ -6,12 +6,14 @@ import { ContentComponent } from './content/content.component';
 import { SharedModule } from 'src/app/modules/shared/shared.module';
 import { HomeComponent } from './pages/home/home.component';
 import { NgxPermissionsModule } from 'ngx-permissions';
+import { ActivationComponent } from './pages/activation/activation.component';
 
 
 @NgModule({
   declarations: [
     ContentComponent,
-    HomeComponent
+    HomeComponent,
+    ActivationComponent
   ],
   imports: [
     CommonModule,

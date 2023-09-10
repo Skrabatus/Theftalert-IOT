@@ -8,7 +8,7 @@ import { Horario } from '../models/horario-response';
 })
 export class TimbreService {
 
-  api:string="https://64d1af09f8d60b174360c831.mockapi.io"
+  api:string="https://64fd1191596493f7af7e1727.mockapi.io"
 
   constructor(private http: HttpClient) { }
 

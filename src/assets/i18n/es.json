@@ -1,5 +1,5 @@
 {
-  "TITLE":"IoTBell",
+  "TITLE":"TheftalertIOT",
   "NABVAR":{
     "item1":"Inicio",
     "item2":"Administrar usuarios",
@@ -10,7 +10,7 @@
   "LOGIN":{
     "title":"Bienvenido",
     "FORM":{
-      "title":"IE Jose Puche",
+      "title":"TheftalertIOT",
       "input1":"Ingrese su correo",
       "input2":"Ingrese su contraseña",
       "button":{
@@ -33,10 +33,10 @@
       },
       "table":{
         "section1":{
-          "title":"Hora"
+          "title":"Hora de encendido"
         },
         "section2":{
-          "title":"Tipo",
+          "title":"Hora de apagado",
           "input":"Seleccione un tipo"
         },
         "section3":{
@@ -98,7 +98,7 @@
         "btn2":"Eliminar"
       }
     },
-    "ins":"IE Jose Puche"
+    "ins":"TheftalertIOT"
   },
   "FORM":{
     "title":"usuario",

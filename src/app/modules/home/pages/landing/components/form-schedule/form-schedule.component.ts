@@ -22,18 +22,18 @@ export class FormScheduleComponent  implements OnInit {
 
   da:any[]=[];
   public record!:Record;
-  public tipo:any[]=[
-    {cod:"Cambio de clase"},
-    {cod:"Entrada"},
-    {cod:"Salida"},
-    {cod:"Descanso"},
-  ];
+  // public tipo:any[]=[
+  //   {cod:"Cambio de clase"},
+  //   {cod:"Entrada"},
+  //   {cod:"Salida"},
+  //   {cod:"Descanso"},
+  // ];
 
-  public sonara:any[]=[
-    {cod: 1},
-    {cod: 2},
-    {cod: 3},
-  ];
+  // public sonara:any[]=[
+  //   {cod: 1},
+  //   {cod: 2},
+  //   {cod: 3},
+  // ];
 
   constructor(private _sHorario:TimbreService,
     private form     : FormBuilder,
@@ -138,8 +138,7 @@ export class FormScheduleComponent  implements OnInit {
     this.horario.push(
       this.form.group({
         start_time : ["", [Validators.required],[]],
-        tipo       : ["", [Validators.required],[]],
-        sonara     : ["", [Validators.required],[]],
+        end_time   : ["", [Validators.required],[]],
       })
     )
   }
@@ -159,8 +158,9 @@ export class FormScheduleComponent  implements OnInit {
     this.horari.forEach((hora: any) => {
       const horaForm = this.form.group({
         start_time: new FormControl(hora?.start_time),
-        tipo: new FormControl(hora?.tipo),
-        sonara: new FormControl(hora?.sonara),
+        end_time: new FormControl(hora?.end_time),
+        // tipo: new FormControl(hora?.tipo),
+        // sonara: new FormControl(hora?.sonara),
       },{
       });
       this.horario.push(horaForm);

@@ -17,7 +17,7 @@ class="table-responsive">
 <tr>
     <th >{{"HOME.form.table.section1.title" | translate}}</th>
     <th >{{"HOME.form.table.section2.title" | translate}}</th>
-    <th >{{"HOME.form.table.section3.title" | translate}}</th>
+    <!-- <th >{{"HOME.form.table.section3.title" | translate}}</th> -->
     <th >{{"HOME.form.table.section4.title" | translate}}</th>
   </tr>
 </thead>
@@ -32,16 +32,20 @@ class="table-responsive">
         </mat-error>
     </td>
     <td align="center" class="p-1">
-      <mat-form-field  class="example-full-width" appearance="fill">
+      <ngx-timepicker-field [format]="24" [defaultTime]="'00:00'" formControlName="end_time" ></ngx-timepicker-field>
+      <mat-error *ngIf="item.get('end_time')?.errors">
+      * Invalido
+      </mat-error>
+      <!-- <mat-form-field  class="example-full-width" appearance="fill">
         <mat-label>{{"HOME.form.table.section2.input" | translate}}</mat-label>
-        <mat-select style="position: relative;" formControlName="tipo" name="tipo">
+        <mat-select style="position: relative;" formControlName="end_time" name="end_time">
           <mat-option  z-index="1056" *ngFor="let timbre of tipo " [value]="timbre?.cod">
             {{timbre?.cod}}
           </mat-option>
         </mat-select>
-      </mat-form-field>
+      </mat-form-field> -->
     </td>
-    <td align="center">
+    <!-- <td align="center">
       <mat-form-field class="example-form-field" appearance="fill">
         <mat-label>{{"HOME.form.table.section3.input" | translate}}</mat-label>
         <mat-select style="position: relative;" formControlName="sonara" name="sonara">
@@ -51,7 +55,7 @@ class="table-responsive">
         </mat-select>
       </mat-form-field>
 
-    </td>
+    </td> -->
     <td class="p-1" align="center">
       <button (click)="delHora(indexFormChildPrice)" type="button" mat-mini-fab class="btn__delete" ><mat-icon >delete</mat-icon></button>
     </td>

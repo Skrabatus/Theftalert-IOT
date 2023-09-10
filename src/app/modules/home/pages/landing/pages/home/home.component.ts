@@ -26,15 +26,16 @@ export class HomeComponent implements OnInit, OnDestroy{
   constructor(private _sHorario:TimbreService,
     private _sCtr: ControllerService,
     ){
-     this.speak();
+      this.getHorario();
+    //  this.speak();
   }
   ngOnDestroy(): void {
-    this.stopRecognition();
+    // this.stopRecognition();
   }
 
   ngOnInit(): void {
 
-    this.startRecognition();
+    // this.startRecognition();
   }
 
   tocarTimbre(){

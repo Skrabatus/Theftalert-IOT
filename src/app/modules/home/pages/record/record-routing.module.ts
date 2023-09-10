@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContentComponent } from './content/content.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ActivationComponent } from './pages/activation/activation.component';
 
 const routes: Routes = [
   {
@@ -10,6 +11,10 @@ const routes: Routes = [
     children:[
       {
         path:'', component: HomeComponent,
+
+      },
+      {
+        path:'activation', component: ActivationComponent,
 
       }
     ]

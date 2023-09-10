@@ -8,7 +8,7 @@ import { Users } from '../models/user-response';
 })
 export class UsersService {
 
-  api:string="https://iotbell-d8a28-default-rtdb.firebaseio.com";
+  api:string="https://theftalert-3ba54-default-rtdb.firebaseio.com";
 
   constructor(private http: HttpClient) { }
 
