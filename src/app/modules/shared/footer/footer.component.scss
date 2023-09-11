@@ -4,8 +4,8 @@
 }
 footer{
   // height: 600px;
-
   // width: 100%;
+  backdrop-filter: blur(3px);
   display: flex;
   // border: solid 1px;
   flex-direction: column;

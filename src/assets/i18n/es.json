@@ -87,7 +87,7 @@
   "PROFILE":{
     "title":"Perfil",
     "data":{
-      "title":"Datos",
+      "title":"Datos de la cuenta",
       "item1":"Nombre",
       "item2":"Apellidos",
       "item3":"Email",
@@ -118,7 +118,7 @@
   },
   "FOOTER":{
     "SECTION1":{
-      "title":"IE JOSE DE LA CRUZ PUCHE",
+      "title":"TheftalertIOT",
       "item1":"",
       "item2":""
     },

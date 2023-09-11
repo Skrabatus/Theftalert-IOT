@@ -128,7 +128,12 @@ public rol:any[]=[
       }
     }
   }
-
+  reloadPage(){
+    const currentUrl = this.router.url;
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([currentUrl]);
+    });
+  }
   agregar(){
     this.nameform="Agregar"
     this.editarC=true;
@@ -281,7 +286,13 @@ this.router.navigate(['/login'])
           id:idTemp,
           ...data
         }
-        this.showToastr_success(`Usuario ${data?.name} editado`)
+        this.showToastr_success(`Usuario ${data?.name} editado`);
+        if(this.router.url==='/profile'){
+          setTimeout(() => {
+            this.reloadPage();
+          }, 1000);
+
+        }
       },
       error: (error:any)=>{
         if(error?.error?.msg){

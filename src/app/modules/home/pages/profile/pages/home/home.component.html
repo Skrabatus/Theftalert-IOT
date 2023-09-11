@@ -24,6 +24,40 @@
       <h2>{{"PROFILE.ins" |translate}}</h2>
     </div>
   </div>
+  <div class="twilio shadow" *ngxPermissionsOnly="['ADMIN']"
+  >
+    <h2 class="h1 text-center ">Opciones de administrador</h2>
+    <p class="text-danger">Configure si tiene acceso a <a target="_blank" href="http://www.twilio.com/docs/api/rest">Twilio</a> para cambiar las variables de envío de SMS. Tenga en cuenta que de esto depende el envió de alerta a su dispositivo móvil.</p>
+    <form class="twilio__form"
+    [formGroup]="formu"
+    (ngSubmit)="send()"
+    >
+      <div class="mb-3">
+        <label for="input1" class="form-label">account_sid</label>
+        <input type="text" [class.is-invalid]="formu.get('account_sid')?.invalid" formControlName="account_sid" class="form-control" id="input1" placeholder="">
+      </div>
+      <div class="mb-3">
+        <label for="input2" class="form-label">auth_token</label>
+        <input type="text" [class.is-invalid]="formu.get('auth_token')?.invalid" formControlName="auth_token" class="form-control" id="input2" placeholder="">
+      </div>
+      <div class="mb-3">
+        <label for="input3" class="form-label">from_number</label>
+        <input type="tel" [class.is-invalid]="formu.get('from_number')?.invalid" formControlName="from_number" class="form-control" id="input3" placeholder="">
+      </div>
+      <div class="mb-3">
+        <label for="input4" class="form-label">to_number</label>
+        <input type="tel" [class.is-invalid]="formu.get('to_number')?.invalid" formControlName="to_number" class="form-control" id="input4" placeholder="">
+      </div>
+      <div class="mb-3">
+        <label for="input5" class="form-label">message</label>
+        <input type="text" [class.is-invalid]="formu.get('message')?.invalid" formControlName="message" class="form-control" id="input5" placeholder="">
+      </div>
+      <div class="twilio__form__btn mb-3">
+        <!-- <button type="button" class="shadow twilio__form__btn--1 btn btn-danger">Cancelar</button> -->
+        <button type="submit" class="shadow twilio__form__btn--2 btn btn-info">Guardar</button>
+      </div>
+    </form>
+  </div>
 </section>
 
 <app-form></app-form>
