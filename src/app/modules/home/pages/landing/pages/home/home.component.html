@@ -1,10 +1,14 @@
 
 <section class="container-fluid p-1 p-lg-4 cont" >
 <h1 class="h1 title">{{"HOME.title" | translate}}</h1>
+
 <h2 class="h1 text text-center">{{"TITLE" | translate}}</h2>
   <div class="cont__lading" *ngIf="loading; else load">
     <div class="cont__lading__card mb-4 shadow" style="display: flex; flex-direction: column; gap: 10px;">
       <div class="  ">
+        <div class="info">
+          <span [ngStyle]="{'color': activar ? '#fd083d ' : '#3ffc08'}">{{activar ? 'Desactivado' : 'Activado'}}</span> <div class="ping circle" [ngStyle]="{'background-color': activar ? '#fd083d ' : '#3ffc08'}"></div>
+        </div>
         <app-time></app-time>
         <div class="cont__lading__card__1 mt-2">
           <!-- <button *ngIf="!activar" mat-fab class="cont__lading__card__btn cont__lading__card__btn--1" (click)="tocarTimbre()">

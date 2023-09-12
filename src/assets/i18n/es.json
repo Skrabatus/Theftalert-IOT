@@ -33,10 +33,10 @@
       },
       "table":{
         "section1":{
-          "title":"Hora de encendido"
+          "title":"Hora de activación"
         },
         "section2":{
-          "title":"Hora de apagado",
+          "title":"Hora de desactivación",
           "input":"Seleccione un tipo"
         },
         "section3":{

@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ControllerService } from 'src/app/services/controllers/controller.service';
 import { UsersService } from 'src/app/services/users.service';
-import { TwilioEsp32Service } from '../../../../../../services/twilio-esp32.service';
+// import { TwilioEsp32Service } from '../../../../../../services/twilio-esp32.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Twilio } from '../../../../../../models/twilio-response';
 import Swal from 'sweetalert2';
+import { TimbreService } from 'src/app/services/timbre.service';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +21,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private _sUser: UsersService,
     public _sctr: ControllerService,
-    private _sTwlEsp32: TwilioEsp32Service,
+    // private _sTwlEsp32: TwilioEsp32Service,
+    private _sHr: TimbreService,
     private form     : FormBuilder,
     ){
     }
@@ -38,7 +40,7 @@ export class HomeComponent implements OnInit {
       auth_token :["", [Validators.required], []],
       from_number :["", [Validators.required], []],
       to_number :["", [Validators.required], []],
-      message :["", [Validators.required], []]
+      message :["", [Validators.required, Validators.maxLength(35)], []]
     })
   }
   loadForm(twilio:Twilio){
@@ -86,12 +88,13 @@ export class HomeComponent implements OnInit {
     })
   }
   getwilioEsp32(){
-    this._sTwlEsp32.getTwilioEsp32ById(1)
+    this._sHr.getHorarioId(1)
     .subscribe({
       next: (data) => {
         // console.log(data);
+
         this.twilio=data
-        this.loadForm(data)
+        this.loadForm(this.twilio)
       },
       error: (error) => {
         this._sctr.showToastr_error(error)
@@ -101,7 +104,7 @@ export class HomeComponent implements OnInit {
   }
 
   putTwilio(id:any, twilio:Twilio){
-    this._sTwlEsp32.putTwilioEsp32(id,twilio)
+    this._sHr.putHorario(id,twilio)
     .subscribe({
       next: (data) => {
         this.loadForm(data);

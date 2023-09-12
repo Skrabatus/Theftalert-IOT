@@ -50,7 +50,7 @@
       </div>
       <div class="mb-3">
         <label for="input5" class="form-label">message</label>
-        <input type="text" [class.is-invalid]="formu.get('message')?.invalid" formControlName="message" class="form-control" id="input5" placeholder="">
+        <input type="text" maxlength="35" [class.is-invalid]="formu.get('message')?.invalid" formControlName="message" class="form-control" id="input5" placeholder="">
       </div>
       <div class="twilio__form__btn mb-3">
         <!-- <button type="button" class="shadow twilio__form__btn--1 btn btn-danger">Cancelar</button> -->
